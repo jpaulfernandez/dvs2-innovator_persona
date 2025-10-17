@@ -9,7 +9,7 @@ export default function RelationshipInsights({ userData, cohortData }) {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4 text-center">🪄 Your Collaboration Blueprint</h2>
+      <h2 className="text-xl font-bold mb-4 text-center text-black">🪄 Your Collaboration Blueprint</h2>
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
           <h3 className="font-bold text-md text-green-800 mb-3 flex items-center"><FaHandshake className="mr-2"/>Synergy Partners</h3>

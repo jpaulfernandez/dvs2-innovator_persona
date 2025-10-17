@@ -116,9 +116,9 @@ export default function PersonaSummary({ userData, cohortData }) {
             <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-gray-100 overflow-hidden border-4 border-white shadow-md">
                 <Image src={avatarUrl} alt={`${userData.Nickname}'s Avatar`} width={96} height={96} unoptimized />
             </div>
-            <h1 className="text-4xl font-bold">{userData.Nickname}'s Blueprint</h1>
+            <h1 className="text-4xl font-bold">{userData.Nickname}&#39;s Blueprint</h1>
             <p className="text-lg text-gray-600 mt-2">{emoji} {title}</p>
-            <blockquote className="mt-4 text-gray-500 italic">"{signatureQuote}"</blockquote>
+            <blockquote className="mt-4 text-gray-500 italic">&#34;{signatureQuote}&#34;</blockquote>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -137,12 +137,12 @@ export default function PersonaSummary({ userData, cohortData }) {
                 </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-4">
-                <h2 className="font-bold text-lg mb-2">When You're in Flow...</h2>
-                <p className="text-sm text-gray-600 italic">"{flowInsight}"</p>
+                <h2 className="font-bold text-lg mb-2">When You&#39;re in Flow...</h2>
+                <p className="text-sm text-gray-600 italic">&#34;{flowInsight}&#34;</p>
             </div>
              <div className="bg-gray-50 rounded-lg p-4">
                 <h2 className="font-bold text-lg mb-2">Your Growth Edge</h2>
-                <p className="text-sm text-gray-600">"{growthEdge}"</p>
+                <p className="text-sm text-gray-600">&#34;{growthEdge}&#34;</p>
             </div>
         </div>
         

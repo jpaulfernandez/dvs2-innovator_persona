@@ -174,7 +174,7 @@ export default function Screen7_MeetYourTribe({ userData, cohortData, onComplete
         </svg>
 
         <motion.p className="text-base md:text-lg font-light text-white/70 absolute bottom-24 md:bottom-16 text-center" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 4 } }}>
-          Your tribe's color glows brightest in this constellation.
+          Your tribe&#39;s color glows brightest in this constellation.
         </motion.p>
       </motion.div>
     </AnimatePresence>

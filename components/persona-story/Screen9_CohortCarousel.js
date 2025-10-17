@@ -96,7 +96,7 @@ export default function Screen9_CohortCarousel({ cohortData, onComplete }) {
         {/* Collective Flow Card */}
         <motion.div variants={itemVariants} className="bg-white/5 p-6 rounded-lg border border-white/10">
           <h2 className="font-bold text-lg mb-2 text-cyan-400">The Collective Flow</h2>
-          <p className="text-white/70">Our cohort's energy is a dynamic equilibrium, blending momentum with reflection.</p>
+          <p className="text-white/70">Our cohort&#39;s energy is a dynamic equilibrium, blending momentum with reflection.</p>
         </motion.div>
       </motion.div>
     </motion.div>

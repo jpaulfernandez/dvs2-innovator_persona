@@ -19,7 +19,7 @@ export default function WorkStyleInsights({ userData }) {
       </div>
       <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg text-center">
         <h4 className="font-semibold text-blue-800">Your Growth Tip</h4>
-        <p className="text-sm text-blue-700 mt-1 italic">"{growthTip}"</p>
+        <p className="text-sm text-blue-700 mt-1 italic">&#34;{growthTip}&#34;</p>
       </div>
     </div>
   );

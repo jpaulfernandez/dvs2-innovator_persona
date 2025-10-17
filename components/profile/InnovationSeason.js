@@ -17,7 +17,7 @@ export default function InnovationSeason({ userData }) {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-2">Your Innovation Season</h2>
+      <h2 className="text-xl font-bold mb-2 text-black">Your Innovation Season</h2>
       <div className="flex items-center gap-4 p-4 rounded-lg" style={{ backgroundColor: 'rgba(249, 250, 251, 1)' }}>
         <Icon className={`text-3xl flex-shrink-0 ${color}`} />
         <div>
