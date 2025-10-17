@@ -30,7 +30,7 @@ export default function Screen5_InnovationMode({ userData, onComplete }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (onComplete) onComplete();
-    }, 1000000); // 9-second duration for the scene
+    }, 90000); // 9-second duration for the scene
     return () => clearTimeout(timer);
   }, [onComplete]);
 
