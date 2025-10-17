@@ -12,7 +12,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -23,4 +23,254 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased; /* Ensure a good default font */
+  }
+}
+
+@layer utilities {
+  @keyframes halo-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 0px rgba(160, 100, 255, 0);
+    }
+    50% {
+      box-shadow: 0 0 25px 8px rgba(160, 100, 255, 0.4);
+    }
+  }
+
+  .input-halo:focus-within {
+    animation: halo-glow 2.5s ease-in-out infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes rise-and-fade {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* NEW: Animation utility classes with delays */
+  .animate-reveal-1 {
+    animation: rise-and-fade 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  .animate-reveal-2 {
+    animation: rise-and-fade 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+  .animate-reveal-3 {
+    animation: rise-and-fade 0.8s ease-out 1s forwards;
+    opacity: 0;
+  }
+  .animate-reveal-4 {
+    animation: rise-and-fade 0.8s ease-out 1.4s forwards;
+    opacity: 0;
+  }
+
+  .archetype-gradient-bg {
+    /* Defines a soft radial gradient that uses our dynamic colors */
+    background: radial-gradient(
+      circle at center,
+      var(--color-from),
+      var(--color-via),
+      var(--color-to)
+    );
+    background-size: 200% 200%;
+    animation: gradient-flow 18s ease infinite;
+    transition: background 1s ease-in-out; /* Smooth transition if data changes */
+  }
+
+  .archetype-bg-gradient {
+    background: radial-gradient(
+      circle at center,
+      #d8b4fe 0%,
+      #c4b5fd 50%,
+      #a78bfa 100%
+    );
+  }
+
+  /* NEW: Optional text shine effect for the archetype name */
+  @keyframes text-shine {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .text-gradient-shine {
+    background: linear-gradient(90deg, #ccc 0%, #fff 50%, #ccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: text-shine 3s linear infinite;
+  }
+
+  .animated-gradient-bg {
+    background: linear-gradient(to top right, #e0c3fc, #8ec5fc, #e0c3fc);
+    background-size: 400% 400%;
+    animation: gradient-flow 15s ease infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes subtle-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px -5px var(--aura-brand-color);
+      opacity: 0.6;
+    }
+    50% {
+      box-shadow: 0 0 35px 0px var(--aura-brand-color);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+
+  /* --- Aura Animations --- */
+  @keyframes pulse-ring {
+    /* Renamed for clarity */
+    0% {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+    70% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+  }
+
+  @keyframes glow-subtle {
+    /* Renamed for clarity */
+    0% {
+      box-shadow: 0 0 10px 0px var(--aura-brand-color);
+    }
+    50% {
+      box-shadow: 0 0 40px 15px var(--aura-brand-color);
+    }
+    100% {
+      box-shadow: 0 0 10px 0px var(--aura-brand-color);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .aura-still-current::before {
+    content: "";
+    position: absolute;
+    inset: -10px; /* Position it slightly outside the icon circle */
+    border-radius: 9999px;
+    animation: subtle-glow 5s infinite ease-in-out;
+  }
+
+  /* UPDATED: Momentum Seeker - A fast, spinning ring */
+  .aura-momentum::before {
+    content: "";
+    position: absolute;
+    inset: -15px; /* Position it further out */
+    border-radius: 9999px;
+    border: 4px dashed var(--aura-brand-color);
+    border-left-color: transparent; /* Create a gap in the ring */
+    border-right-color: transparent;
+    opacity: 0.8;
+    animation: spin 4s linear infinite; /* Use the new spin animation */
+  }
+
+  /* Flow Hacker */
+  .aura-flow-hacker::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border-radius: 9999px;
+    /* Use a gradient that integrates the brand color or complementary ones */
+    background: linear-gradient(
+      90deg,
+      var(--aura-brand-color),
+      #34d399,
+      #60a5fa,
+      var(--aura-brand-color)
+    );
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+    filter: blur(10px);
+  }
+
+  /* Empathic Pulse */
+  .aura-empathic::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border-radius: 9999px;
+    animation: glow-subtle 3s infinite ease-in-out;
+    background-color: transparent; /* Ensure no default background */
+    box-shadow: 0 0 10px 0px var(--aura-brand-color); /* Initial state */
+  }
 }
